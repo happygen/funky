@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Funky Test</title>
+</head>
+<body>
+
+<div id="test-wrapper"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="../dist/funky.min.js"></script>
+
+<script type="text/javascript">
+	/*
+	var generator = new Generator();
+	$(function(){
+		var options = {
+			'href': 'http://www.google.com',
+			'target': '_blank',
+			'id': 'google-btn',
+			'class': 'btn',
+			'content': 'Osman',
+			'data-target': 'haydar'
+		};
+
+		console.log(generator.div(options));
+		$('#test-wrapper').html(generator.div(options));
+	});
+	*/
+	var request = new Request();
+	request.type = 'get';
+	request.url = 'http://beta.evimitut.net/ajax/save_image';
+	request.params = {id:1, name:'Yiğit'};
+	request.callBack = onPostComplete;
+	request.make();
+
+	function onPostComplete(response){
+		console.log(response);
+	}
+
+	
+</script>
+</body>
+</html>
